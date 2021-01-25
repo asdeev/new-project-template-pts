@@ -72,7 +72,6 @@ module.exports = {
           },
         },
         parallel: true, // use multi-process parallel running for faster build speed
-        cache: true, // enable file caching
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
@@ -145,17 +144,18 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/dist/',
     chunkFilename: '[id].[hash:8].js',
     filename: '[name].[hash:8].js',
     sourceMapFilename: '[name].[hash:8].map',
   },
   mode: !isProd ? 'development' : 'production',
-  devtool: !isProd ? 'inline-source-map' : false,
+  devtool: !isProd ? 'source-map' : false,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
+    hot: true,
     port: 9000,
   },
 };

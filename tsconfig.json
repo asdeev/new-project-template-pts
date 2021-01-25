@@ -22,10 +22,10 @@
     "noUnusedParameters": true,
     "removeComments": true,
     "resolveJsonModule": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src"]
+  "include": ["src", "__tests__"]
 }
